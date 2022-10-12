@@ -14,6 +14,10 @@ import br.com.ifpe.oxefoodnoite.modelo.produto.CategoriaProduto;
 import br.com.ifpe.oxefoodnoite.modelo.produto.CategoriaProdutoService;
 import br.com.ifpe.oxefoodnoite.util.entity.GenericController;
 
+/**
+ * @author Roberto Alencar
+ *
+ */
 @RestController
 @RequestMapping("/api/categoriaproduto")
 public class CategoriaProdutoController extends GenericController {

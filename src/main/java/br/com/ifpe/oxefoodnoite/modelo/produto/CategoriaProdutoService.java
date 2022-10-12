@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 import br.com.ifpe.oxefoodnoite.util.entity.GenericService;
 import br.com.ifpe.oxefoodnoite.util.exception.EntityAlreadyExistsException;
 
+/**
+ * Classe responsável pelas operações relativas a uma {@link CategoriaProduto}.
+ * 
+ * @author Roberto Alencar
+ *
+ */
 @Service
 public class CategoriaProdutoService extends GenericService {
     

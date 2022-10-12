@@ -16,6 +16,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * @author Roberto Alencar
+ *
+ */
 @Entity
 @Table(name = "CategoriaProduto")
 @Where(clause = "habilitado = true")
@@ -26,8 +30,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoriaProduto extends EntidadeAuditavel {
 
-    private static final long serialVersionUID = -1313945132507416245L;
-    
+    private static final long serialVersionUID = 4948604936934075895L;
+
     public static final String LABEL = "Categoria de Produto";
 
     @JsonIgnore
