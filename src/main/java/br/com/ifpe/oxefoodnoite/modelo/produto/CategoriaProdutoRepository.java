@@ -10,7 +10,8 @@ import org.springframework.data.jpa.repository.Query;
  * @author Roberto Alencar
  *
  */
-public interface CategoriaProdutoRepository extends JpaRepository<CategoriaProduto, Long>, JpaSpecificationExecutor<CategoriaProduto> {
+public interface CategoriaProdutoRepository
+	extends JpaRepository<CategoriaProduto, Long>, JpaSpecificationExecutor<CategoriaProduto> {
 
     List<CategoriaProduto> findByChaveEmpresaOrderByDescricaoAsc(String chaveEmpresa);
 
