@@ -5,7 +5,7 @@ services:
      image: postgres:9.6
      restart: unless-stopped
      environment:
-       POSTGRES_PASSWORD: oxefood-noite
+       POSTGRES_PASSWORD: oxefood
        POSTGRES_DB: oxefood-noite
      ports:
        - 5435:5432
