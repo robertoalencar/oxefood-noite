@@ -3,7 +3,7 @@ services:
 
    db:
      image: postgres:9.6
-     restart: unless-stopped
+     restart: always
      environment:
        POSTGRES_PASSWORD: oxefood
        POSTGRES_DB: oxefood-noite
