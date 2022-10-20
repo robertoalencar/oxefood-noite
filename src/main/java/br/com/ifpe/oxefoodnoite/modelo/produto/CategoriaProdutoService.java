@@ -1,5 +1,7 @@
 package br.com.ifpe.oxefoodnoite.modelo.produto;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.apache.commons.lang3.StringUtils;
@@ -29,6 +31,18 @@ public class CategoriaProdutoService extends GenericService {
 	super.preencherCamposAuditoria(categoriaProduto);
 
 	return repository.save(categoriaProduto);
+    }
+    
+    @Transactional
+    public CategoriaProduto findById(Long id) {
+
+	return repository.findById(id).get();
+    }
+
+    @Transactional
+    public List<CategoriaProduto> consultarPorChaveEmpresa(String chaveEmpresa) {
+
+	return repository.findByChaveEmpresaOrderByDescricaoAsc(chaveEmpresa);
     }
 
     private void validarCategoriaProdutoExistente(CategoriaProduto categoriaParam, Long id) {
