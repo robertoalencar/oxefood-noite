@@ -49,7 +49,6 @@ public class CategoriaProdutoController extends GenericController {
 	    @ApiResponse(code = 404, message = "Não foi encontrado um registro para o Id informado."),
 	    @ApiResponse(code = 500, message = "Foi gerado um erro no servidor."),
     })
-
     @GetMapping("/{id}")
     public CategoriaProduto get(@PathVariable Long id) {
 
