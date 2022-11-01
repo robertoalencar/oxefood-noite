@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,6 +60,14 @@ public class CategoriaProdutoController extends GenericController {
     public List<CategoriaProduto> consultarPorChaveEmpresa(@PathVariable String chaveEmpresa) {
 	
 	return categoriaProdutoService.consultarPorChaveEmpresa(chaveEmpresa);
+    }
+    
+    @PutMapping("/{id}")
+    @ApiOperation(value = "Serviço responsável por atualizar as informações da categoria de produto no sistema.")
+    public ResponseEntity<CategoriaProduto> update(@PathVariable("id") Long id, @RequestBody CategoriaProdutoRequest request) {
+
+	categoriaProdutoService.update(id, request.buildCategoriaProduto());
+	return ResponseEntity.ok().build();
     }
 
 
