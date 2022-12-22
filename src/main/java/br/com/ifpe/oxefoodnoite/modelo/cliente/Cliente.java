@@ -1,5 +1,7 @@
 package br.com.ifpe.oxefoodnoite.modelo.cliente;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -29,13 +31,19 @@ public class Cliente extends EntidadeAuditavel {
     
     private static final long serialVersionUID = 7830960733588385306L;
 
-    @Column
+    @Column(nullable = false)
     private String chaveEmpresa;
     
-    @Column
+    @Column(nullable = false, length = 100)
     private String nome;
     
     @Column
+    private String email;
+    
+    @Column
+    private LocalDate dataNascimento;
+    
+    @Column(unique = true)
     private String cpf;
     
     @Column
