@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.ifpe.oxefoodnoite.modelo.acesso.UsuarioService;
 import br.com.ifpe.oxefoodnoite.modelo.mensagens.EmailService;
 import br.com.ifpe.oxefoodnoite.util.entity.GenericService;
 import br.com.ifpe.oxefoodnoite.util.exception.EntidadeNaoEncontradaException;
@@ -21,13 +22,18 @@ public class ClienteService extends GenericService {
     @Autowired
     private EmailService emailService;
     
+    @Autowired
+    private UsuarioService usuarioService;
+    
     @Transactional
     public Cliente save(Cliente cliente) {
+	
+	usuarioService.save(cliente.getUsuario());
 
 	super.preencherCamposAuditoria(cliente);
 	Cliente clienteSaldo = repository.save(cliente);
 	
-	emailService.enviarEmailConfirmacaoCadastroCliente(clienteSaldo);
+	//emailService.enviarEmailConfirmacaoCadastroCliente(clienteSaldo);
 	
 	return clienteSaldo;
     }

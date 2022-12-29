@@ -4,10 +4,13 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Where;
 
+import br.com.ifpe.oxefoodnoite.modelo.acesso.Usuario;
 import br.com.ifpe.oxefoodnoite.util.entity.EntidadeAuditavel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,11 +37,12 @@ public class Cliente extends EntidadeAuditavel {
     @Column(nullable = false)
     private String chaveEmpresa;
     
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Usuario usuario;
+    
     @Column(nullable = false, length = 100)
     private String nome;
-    
-    @Column
-    private String email;
     
     @Column
     private LocalDate dataNascimento;
