@@ -44,7 +44,6 @@ public class EmpresaRequest {
 	
 	return usuario;
     }
-
     
     public Empresa buildEmpresa() {
 

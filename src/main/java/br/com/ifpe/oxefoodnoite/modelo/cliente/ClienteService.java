@@ -50,6 +50,12 @@ public class ClienteService extends GenericService {
 	}
 
     }
+    
+    @Transactional
+    public List<Cliente> listarTodos() {
+
+	return repository.findAll();
+    }
 
     @Transactional
     public List<Cliente> consultarPorChaveEmpresa(String chaveEmpresa) {

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ifpe.oxefoodnoite.modelo.cliente.Cliente;
 import br.com.ifpe.oxefoodnoite.modelo.cliente.ClienteService;
 import br.com.ifpe.oxefoodnoite.util.entity.GenericController;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/cliente")
@@ -30,6 +31,13 @@ public class ClienteController extends GenericController {
 	
 	Cliente cliente = clienteService.save(request.buildCliente());
 	return new ResponseEntity<Cliente>(cliente, HttpStatus.CREATED);
+    }
+    
+    @ApiOperation(value = "Serviço responsável por listar todos os clientes do sistema.")
+    @GetMapping
+    public List<Cliente> listarTodos() {
+
+	return clienteService.listarTodos();
     }
     
     @GetMapping("/{id}")
