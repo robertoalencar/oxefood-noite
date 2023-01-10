@@ -62,7 +62,10 @@ public class SecurityConfig {
 	 	.authenticationEntryPoint(authenticationEntryPoint).and().authorizeRequests()
 
 	 	.antMatchers(AUTH_WHITELIST).permitAll()
+	 	
 	 	.antMatchers("/api/cliente").permitAll()
+	 	.antMatchers("/api/cliente/*").permitAll()
+	 	
 	 	.antMatchers(HttpMethod.POST, "/api/empresa").permitAll()
 	 	.antMatchers(HttpMethod.POST, "/api/login/signin").permitAll()
 	 	

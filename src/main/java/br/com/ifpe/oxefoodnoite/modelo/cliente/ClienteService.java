@@ -57,4 +57,23 @@ public class ClienteService extends GenericService {
 	return repository.findAll();
     }
 
+    @Transactional
+    public void update(Long id, Cliente clienteAlterado) {
+
+	 Cliente cliente = this.findById(id);
+	 cliente.updateFrom(clienteAlterado);
+	 super.preencherCamposAuditoria(cliente);
+
+	 repository.save(cliente);
+    }
+    
+    @Transactional
+    public void delete(Long id) {
+
+	Cliente cliente = this.findById(id);
+	cliente.setHabilitado(Boolean.FALSE);
+	super.preencherCamposAuditoria(cliente);
+
+	repository.save(cliente);
+    }
 }
