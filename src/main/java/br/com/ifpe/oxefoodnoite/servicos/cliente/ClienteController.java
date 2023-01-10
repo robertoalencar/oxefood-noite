@@ -46,9 +46,4 @@ public class ClienteController extends GenericController {
 	return clienteService.findById(id);
     }
     
-    @GetMapping("/porempresa/{chaveEmpresa}")
-    public List<Cliente> consultarPorChaveEmpresa(@PathVariable String chaveEmpresa) {
-	
-	return clienteService.consultarPorChaveEmpresa(chaveEmpresa);
-    }
 }

@@ -57,9 +57,4 @@ public class ClienteService extends GenericService {
 	return repository.findAll();
     }
 
-    @Transactional
-    public List<Cliente> consultarPorChaveEmpresa(String chaveEmpresa) {
-
-	return repository.findByChaveEmpresaOrderByNomeAsc(chaveEmpresa);
-    }
 }

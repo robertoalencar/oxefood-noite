@@ -33,9 +33,6 @@ import lombok.Setter;
 public class Cliente extends EntidadeAuditavel {
     
     private static final long serialVersionUID = 7830960733588385306L;
-
-    @Column(nullable = false)
-    private String chaveEmpresa;
     
     @ManyToOne
     @JoinColumn(nullable = false)

@@ -24,10 +24,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClienteRequest {
-
-    @NotNull(message = "O Chave Empresa é de preenchimento obrigatório")
-    @NotBlank(message = "O Chave Empresa é de preenchimento obrigatório")
-    private String chaveEmpresa;
     
     @NotBlank(message = "O e-mail é de preenchimento obrigatório")
     @Email
@@ -68,7 +64,6 @@ public class ClienteRequest {
     public Cliente buildCliente() {
 
 	Cliente cliente = Cliente.builder()
-		.chaveEmpresa(chaveEmpresa)
 		.usuario(buildUsuario())
 		.nome(nome)
 		.cpf(cpf)
